@@ -1,4 +1,17 @@
 <<<<<<< HEAD
+document.getElementById("loginForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    let usuario = document.getElementById("email").value;
+    let contrasena = document.getElementById("password").value;
+    let rol = document.getElementById("rol").value;
+
+    console.log("Usuario:", usuario);
+    console.log("Contraseña:", contrasena);
+    console.log("Rol:", rol);
+});
+=======
+<<<<<<< HEAD
 function verificarDatos(usuario, contraseña) {
     return (usuario === "admin@gmail.com" && contraseña === "1234");
 }
@@ -22,3 +35,4 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
 
 });
 >>>>>>> MiguelArias
+>>>>>>> main
