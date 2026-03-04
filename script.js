@@ -2,7 +2,7 @@ let intentos = 0;
 const MAX_INTENTOS = 3;
 
 function verificarDatos(usuario, contrasena) {
-    return (usuario === "admin@gmail.com" && contrasena === "1234");
+    return usuario === "admin@gmail.com" && contrasena === "1234";
 }
 
 document.getElementById("loginForm").addEventListener("submit", function(event) {
