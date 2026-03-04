@@ -1,6 +1,13 @@
-<<<<<<< HEAD
-document.getElementById("loginForm").addEventListener("submit", function(e) {
-    e.preventDefault();
+let intentos = 0;
+const MAX_INTENTOS = 3;
+
+function verificarDatos(usuario, contrasena) {
+    return (usuario === "admin@gmail.com" && contrasena === "1234");
+}
+
+document.getElementById("loginForm").addEventListener("submit", function(event) {
+
+    event.preventDefault();
 
     let usuario = document.getElementById("email").value;
     let contrasena = document.getElementById("password").value;
@@ -9,23 +16,13 @@ document.getElementById("loginForm").addEventListener("submit", function(e) {
     console.log("Usuario:", usuario);
     console.log("Contraseña:", contrasena);
     console.log("Rol:", rol);
-});
-=======
-<<<<<<< HEAD
-function verificarDatos(usuario, contraseña) {
-    return (usuario === "admin@gmail.com" && contraseña === "1234");
-}
-=======
-document.getElementById("loginForm").addEventListener("submit", function(event) {
-
-    event.preventDefault();
 
     if (intentos >= MAX_INTENTOS) {
         alert("🚫 Usuario bloqueado");
         return;
     }
 
-    if (verificarDatos(usuario, contraseña)) {
+    if (verificarDatos(usuario, contrasena)) {
         alert("✅ Acceso permitido");
         window.location.href = "dashboard.html";
     } else {
