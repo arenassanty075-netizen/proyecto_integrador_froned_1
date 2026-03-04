@@ -1,0 +1,12 @@
+[33m46e3993[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m corrijo login y estilos
+[33m8879383[m corrijo etiqueta del enlace en login
+[33m051e70b[m Merge pull request #4 from arenassanty075-netizen/MiguelArias
+[33me08ad43[m[33m ([m[1;32mMiguelArias[m[33m)[m corrijo error en etiqueta del login
+[33ma3ad47c[m Merge pull request #3 from arenassanty075-netizen/marcela
+[33m6f0b55c[m[33m ([m[1;31morigin/marcela[m[33m)[m Marcela: resuelve conflicto con main
+[33m75f83fa[m MiguelArias: se agrega validación y alertas del login
+[33ma245636[m Merge pull request #2 from arenassanty075-netizen/santiago
+[33m237f023[m Se implementa el style,el mockups,el script captura de datos del formulario
+[33m3d71c99[m[33m ([m[1;31morigin/santiago[m[33m)[m Se crea el htlm de registro función para validar credenciales
+[33m7b7e204[m agrego  login y se implementa validación de acceso y bloqueo por intentos
+[33m5115290[m Creacion del repository
