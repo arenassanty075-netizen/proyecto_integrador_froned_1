@@ -34,5 +34,3 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
     }
 
 });
->>>>>>> MiguelArias
->>>>>>> main
