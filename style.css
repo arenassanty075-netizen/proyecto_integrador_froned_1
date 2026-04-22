@@ -191,3 +191,192 @@ header {
   font-size: 28px;
   color: #4a3aff;
 }
+
+/* ===================== */
+/* DASHBOARD TEAL PRO */
+/* ===================== */
+
+/* RESET SOLO PARA DASH */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* LAYOUT */
+.dashboard {
+  display: flex;
+  height: 100vh;
+}
+
+/* SIDEBAR FIJA Y PEGADA */
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 240px;
+  height: 100vh;
+  background: linear-gradient(180deg, #0f766e, #115e59);
+  color: #ccfbf1;
+  padding: 20px;
+  box-shadow: 4px 0 15px rgba(0,0,0,0.1);
+}
+
+.sidebar h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-weight: bold;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  margin: 15px 0;
+  padding: 8px;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.sidebar ul li:hover {
+  background: rgba(255,255,255,0.1);
+  cursor: pointer;
+}
+
+.sidebar ul li a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* MAIN CONTENT */
+.main-content {
+  margin-left: 240px;
+  flex: 1;
+  padding: 40px;
+  background: #ecfeff;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* HEADER */
+header {
+  width: 100%;
+  max-width: 900px;
+}
+
+header h1 {
+  text-align: center;
+  color: #134e4a;
+  margin-bottom: 25px;
+}
+
+/* CARDS */
+.cards {
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  width: 200px;
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  text-align: center;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card h3 {
+  font-size: 30px;
+  color: #0f766e;
+}
+
+.card p {
+  color: #64748b;
+}
+
+/* CRUD */
+.crud-container {
+  width: 100%;
+  max-width: 900px;
+  background: white;
+  padding: 25px;
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+.crud-container h2 {
+  margin-bottom: 15px;
+  color: #134e4a;
+  text-align: center;
+}
+
+/* FORM */
+.crud-form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+#nombre, #rolUser {
+  flex: 1;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #99f6e4;
+  outline: none;
+}
+
+#nombre:focus, #rolUser:focus {
+  border-color: #0f766e;
+}
+
+/* BOTÓN */
+#agregar {
+  background: linear-gradient(135deg, #0f766e, #14b8a6);
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#agregar:hover {
+  transform: scale(1.05);
+}
+
+/* LISTA */
+#lista p {
+  background: #f0fdfa;
+  padding: 12px;
+  border-radius: 10px;
+  margin: 8px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#lista button {
+  background: #ef4444;
+  border: none;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#lista button:hover {
+  background: #dc2626;
+}
