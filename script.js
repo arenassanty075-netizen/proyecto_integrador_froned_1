@@ -94,3 +94,44 @@ if (lista) {
 
   mostrarUsuarios();
 }
+
+function registrar() {
+
+    const nombre = document.getElementById("nombre");
+    const email = document.getElementById("email");
+    const password = document.getElementById("password");
+
+    // DEBUG (para ver si existe en consola)
+    console.log(nombre, email, password);
+
+    if (!nombre || !email || !password) {
+        alert("Inputs no existen en el HTML");
+        return;
+    }
+
+    if (!nombre.value || !email.value || !password.value) {
+        alert("Completa todos los campos");
+        return;
+    }
+
+    let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+
+    const existe = usuarios.find(u => u.email === email.value);
+
+    if (existe) {
+        alert("Este usuario ya existe");
+        return;
+    }
+
+    usuarios.push({
+        nombre: nombre.value,
+        email: email.value,
+        password: password.value
+    });
+
+    localStorage.setItem("usuarios", JSON.stringify(usuarios));
+
+    alert("Registro exitoso");
+
+    window.location.href = "login.html";
+}
