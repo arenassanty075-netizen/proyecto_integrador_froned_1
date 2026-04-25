@@ -2,10 +2,17 @@ let intentos = 0;
 const MAX_INTENTOS = 3;
 
 function verificarDatos(usuario, contrasena) {
-    return usuario === "admin@gmail.com" && contrasena === "1234";
+
+    let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+
+    const encontrado = usuarios.find(u => 
+        u.email === usuario && u.password === contrasena
+    );
+
+    return encontrado ? true : false;
 }
 
-// FIX: evitar error en dashboard
+
 let loginForm = document.getElementById("loginForm");
 
 if (loginForm) {
