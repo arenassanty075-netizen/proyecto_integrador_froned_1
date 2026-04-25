@@ -9,14 +9,21 @@
  <div class="form-container">
       <p class="title">Create account</p>
       <p class="sub-title">Let's get statred with your 30 days free trial</p>
-      <form class="form">
-        <input type="text" class="input" placeholder="Name">
-        <input type="email" class="input" placeholder="Email">
-        <input type="password" class="input" placeholder="Password">
-        <button class="form-btn">Create account</button>
-      </form>
+      <form class="form" onsubmit="return false;">
+  
+  <input type="text" id="nombre" class="input" placeholder="Name">
+  
+  <input type="email" id="email" class="input" placeholder="Email">
+  
+  <input type="password" id="password" class="input" placeholder="Password">
+
+  <button type="button" class="form-btn" onclick="registrar()">
+    Create account
+  </button>
+
+</form>
       <p class="sign-up-label">
-        Already have an account?<a href="index.html" class="sign-up-link">Log in</a>
+        Already have an account?<a href="login.html" class="sign-up-link">Log in</a>
       </p>
       <div class="buttons-container">
         <div class="apple-login-button">
@@ -42,5 +49,7 @@
       </div>
     </div>
 
+     <script src="script.js"></script>
+  
 </body>
 </html>
