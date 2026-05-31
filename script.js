@@ -82,6 +82,17 @@ if (lista) {
     let email = document.getElementById("email");
     let password = document.getElementById("password");
     let boton = document.getElementById("agregar");
+    let usuarioEditando = null;
+    window.editarUsuario = function(index) {
+
+    nombre.value = usuarios[index].nombre;
+    email.value = usuarios[index].email;
+    password.value = usuarios[index].password;
+
+    usuarioEditando = index;
+
+    boton.textContent = "Guardar cambios";
+}
 
     function mostrarUsuarios() {
 
@@ -91,6 +102,7 @@ if (lista) {
             lista.innerHTML += `
                 <p>
                     ${user.nombre} - ${user.email}
+                    <button onclick="editarUsuario(${index})">Editar</button>
                     <button onclick="eliminarUsuario(${index})">Eliminar</button>
                 </p>
             `;
@@ -99,30 +111,45 @@ if (lista) {
         localStorage.setItem("usuarios", JSON.stringify(usuarios));
     }
 
-    boton.addEventListener("click", () => {
+   boton.addEventListener("click", () => {
 
-        if (!nombre.value || !email.value || !password.value) {
-            alert("Completa todos los campos");
-            return;
-        }
+    if (!nombre.value || !email.value || !password.value) {
+        alert("Completa todos los campos");
+        return;
+    }
+
+    if (usuarioEditando !== null) {
+
+        usuarios[usuarioEditando] = {
+            nombre: nombre.value,
+            email: email.value,
+            password: password.value
+        };
+
+        usuarioEditando = null;
+        boton.textContent = "Agregar";
+
+    } else {
 
         usuarios.push({
             nombre: nombre.value,
             email: email.value,
             password: password.value
         });
+    }
 
-        mostrarUsuarios();
+    mostrarUsuarios();
 
-        nombre.value = "";
-        email.value = "";
-        password.value = "";
-    });
+    nombre.value = "";
+    email.value = "";
+    password.value = "";
+});
 
     window.eliminarUsuario = function (index) {
         usuarios.splice(index, 1);
         mostrarUsuarios();
     }
+    
 
     mostrarUsuarios();
 }
@@ -195,26 +222,19 @@ function logout() {
 }
 async function cargarUsuariosJson() {
     try {
-
         const respuesta = await fetch("usuarios.json");
-
         const usuariosJson = await respuesta.json();
 
-         // Guardar usuarios JSON en localStorage
-        localStorage.setItem("usuarios", JSON.stringify(usuariosJson));
-
-        usuariosJson.forEach(usuario => {
-
-            lista.innerHTML += `
-                <p>
-                    ${usuario.nombre} - ${usuario.email}
-                </p>
-            `;
-
-        });
+        if (!localStorage.getItem("usuarios")) {
+            localStorage.setItem(
+                "usuarios",
+                JSON.stringify(usuariosJson)
+            );
+        }
 
     } catch (error) {
         console.error("Error al cargar usuarios.json", error);
     }
 }
+
 cargarUsuariosJson();
