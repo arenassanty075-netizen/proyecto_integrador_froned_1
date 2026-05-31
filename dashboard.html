@@ -5,9 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard - Sistema Escolar</title>
     <link rel="stylesheet" href="style.css">
-
 </head>
-<body>
+<body class="page-dashboard">
     
 
 <div class="dashboard">
@@ -21,14 +20,14 @@
       <li>Profesores</li>
       <li>Notas</li>
       <li>Configuración</li>
-      <li><a href="login.html">Cerrar sesión</a></li>
+      <li><a href="#" onclick="logout()">Cerrar sesión</a></li>
     </ul>
   </div>
 
   
   <div class="main-content">
     <header>
-      <h1>Bienvenidos</h1>
+      <h1 id="bienvenida"></h1>
     </header>
 
     <div class="cards">
@@ -59,15 +58,15 @@
       <h2>Gestión de usuarios</h2>
 
       <div class="crud-form">
-        <input id="nombre" placeholder="Nombre">
-        <input id="rolUser" placeholder="Rol">
-        <button id="agregar">Agregar</button>
-      </div>
+      <input id="nombre" placeholder="Nombre">
+      <input id="email" placeholder="Email">
+      <input id="password" type="password" placeholder="Contraseña">
+  <button id="agregar">Agregar</button>
+</div>
 
       <div id="lista"></div>
-
     </div>
-    <!--FIN CRUD-->
+    
 
   </div>
 
