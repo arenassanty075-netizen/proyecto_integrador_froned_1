@@ -1,382 +1,149 @@
-/* From Uiverse.io by akshat-patel28 */ 
-.form-container {
-  width: 350px;
-  height: 585px;
-  background-color: #fff;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  border-radius: 10px;
-  box-sizing: border-box;
-  padding: 20px 30px;
+:root {
+    --glass-bg: rgba(255, 255, 255, 0.30);
+    --glass-border: rgba(255, 255, 255, 0.60);
+    --glass-shadow: 0 8px 32px rgba(85, 107, 47, 0.12);
+    --glass-inset: inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    --blur: blur(18px);
+    .main-content {
+    margin-left: 280px;
+    padding: 50px;
+    min-height: 100vh;
 }
 
-body {
-  margin: 0;
-  height: 100vh;
-  display: flex;
-  justify-content: center; /* horizontal */
-  align-items: center;     /* vertical */
-  background-color: #f4f4f4; /* opcional */
+    /* Colores principales */
+    --menta-claro: #d8f3dc;
+    --menta: #95d5b2;
+    --verde-suave: #74c69d;
+    --verde-oliva: #606c38;
+    --verde-profundo: #3a5a40;
+
+    /* Grises */
+    --gris-claro: #f8f9fa;
+    --gris-medio: #adb5bd;
+    --gris-oscuro: #343a40;
+
+    /* Textos */
+    --texto-principal: #2d3436;
+    --texto-suave: #6c757d;
+
+    /* Gradientes */
+    --gradiente-principal:
+        linear-gradient(
+            135deg,
+            #d8f3dc 0%,
+            #b7e4c7 25%,
+            #95d5b2 50%,
+            #74c69d 75%,
+            #606c38 100%
+        );
+        .main-content header {
+    margin-bottom: 40px;
+    padding: 20px;
 }
 
-.title {
-  text-align: center;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  margin: 10px 0 30px 0;
-  font-size: 28px;
-  font-weight: 800;
+    --gradiente-boton:
+        linear-gradient(
+            135deg,
+            #95d5b2 0%,
+            #74c69d 50%,
+            #3a5a40 100%
+        );
+
+    --radio-sm: 12px;
+    --radio-md: 16px;
+    --radio-lg: 20px;
+}body {
+    margin: 0;
+    font-family: 'Raleway', sans-serif;
+    color: var(--texto-principal);
+    .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+    .card {
+    padding: 30px;
+    min-height: 160px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 20px;
+    .crud-container {
+    padding: 40px;
+    margin-top: 20px;
+    border-radius: 25px;
+}
+}
 }
 
-.sub-title {
-  margin: 0;
-  margin-bottom: 5px;
-  font-size: 9px;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(216,243,220,0.92) 0%,
+            rgba(183,228,199,0.90) 25%,
+            rgba(149,213,178,0.88) 50%,
+            rgba(116,198,157,0.85) 75%,
+            rgba(96,108,56,0.82) 100%
+        ),
+        url("img/fondo-escolar.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}.sidebar h2{
+    color: var(--verde-profundo);
 }
 
-.form {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-  margin-bottom: 15px;
-}
-
-.input {
-  border-radius: 20px;
-  border: 1px solid #c0c0c0;
-  outline: 0 !important;
-  box-sizing: border-box;
-  padding: 12px 15px;
-}
-
-.form-btn {
-  padding: 10px 15px;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  border-radius: 20px;
-  border: 0 !important;
-  outline: 0 !important;
-  background: teal;
-  color: white;
-  cursor: pointer;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-}
-
-.form-btn:active {
-  box-shadow: none;
-}
-
-.sign-up-label {
-  margin: 0;
-  font-size: 10px;
-  color: #747474;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-}
-
-.sign-up-link {
-  margin-left: 1px;
-  font-size: 11px;
-  text-decoration: underline;
-  text-decoration-color: teal;
-  color: teal;
-  cursor: pointer;
-  font-weight: 800;
-}
-
-.buttons-container {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  margin-top: 20px;
-  gap: 15px;
-}
-
-.apple-login-button,
-    .google-login-button {
-  border-radius: 20px;
-  box-sizing: border-box;
-  padding: 10px 15px;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
-        rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  font-size: 11px;
-  gap: 5px;
-}
-
-.apple-login-button {
-  background-color: #000;
-  color: #fff;
-  border: 2px solid #000;
-}
-
-.google-login-button {
-  border: 2px solid #747474;
-}
-
-.apple-icon,
-    .google-icon {
-  font-size: 18px;
-  margin-bottom: 1px;
-}
-
-.dashboard {
-  display: flex;
-  height: 100vh;
-}
-
-/* Sidebar */
+.sidebar ul li:hover,
 .sidebar {
-  width: 250px;
-  background-color: #4a3aff;
-  color: white;
-  padding: 20px;
-}
-
-.sidebar h2 {
-  text-align: center;
+    padding: 35px 20px;
 }
 
 .sidebar ul {
-  list-style: none;
-  padding: 0;
+    margin-top: 25px;
 }
 
 .sidebar ul li {
-  margin: 20px 0;
-  cursor: pointer;
+    margin-bottom: 10px;
+    padding: 14px 18px;
+}
+.sidebar ul li.activo{
+    background: rgba(255,255,255,0.55);
+    color: var(--verde-profundo);
+    border-left: 4px solid var(--verde-oliva);
+}.card h3{
+    color: var(--verde-profundo);
+    font-size: 2.5rem;
+    font-weight: 900;
+}#agregar{
+    background: var(--gradiente-boton);
+    color: white;
+    box-shadow: 0 6px 20px rgba(58,90,64,0.30);
+}.lista-item{
+    border-left: 5px solid var(--verde-oliva);
 }
 
-.sidebar ul li a {
-  color: white;
-  text-decoration: none;
+.lista-nombre{
+    color: var(--verde-profundo);
+    .formulario {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+    #listaUsuarios {
+    margin-top: 30px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
-
-/* Main */
-.main-content {
-  flex: 1;
-  padding: 20px;
+}#nombre,
+#rolUser {
+    flex: 1;
+    min-width: 220px;
+    height: 50px;
 }
-
-header {
-  margin-bottom: 20px;
-}
-
-/* Cards */
-.cards {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-.card {
-  background-color: white;
-  padding: 20px;
-  width: 200px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  text-align: center;
-}
-
-.card h3 {
-  margin: 0;
-  font-size: 28px;
-  color: #4a3aff;
-}
-
-/* ===================== */
-/* DASHBOARD TEAL PRO */
-/* ===================== */
-
-/* RESET SOLO PARA DASH */
-body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-}
-
-/* LAYOUT */
-.dashboard {
-  display: flex;
-  height: 100vh;
-}
-
-/* SIDEBAR FIJA Y PEGADA */
-.sidebar {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 240px;
-  height: 100vh;
-  background: linear-gradient(180deg, #0f766e, #115e59);
-  color: #ccfbf1;
-  padding: 20px;
-  box-shadow: 4px 0 15px rgba(0,0,0,0.1);
-}
-
-.sidebar h2 {
-  text-align: center;
-  margin-bottom: 25px;
-  font-weight: bold;
-}
-
-.sidebar ul {
-  list-style: none;
-  padding: 0;
-}
-
-.sidebar ul li {
-  margin: 15px 0;
-  padding: 8px;
-  border-radius: 6px;
-  transition: 0.3s;
-}
-
-.sidebar ul li:hover {
-  background: rgba(255,255,255,0.1);
-  cursor: pointer;
-}
-
-.sidebar ul li a {
-  text-decoration: none;
-  color: inherit;
-}
-
-/* MAIN CONTENT */
-.main-content {
-  margin-left: 240px;
-  flex: 1;
-  padding: 40px;
-  background: #ecfeff;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-/* HEADER */
-header {
-  width: 100%;
-  max-width: 900px;
-}
-
-header h1 {
-  text-align: center;
-  color: #134e4a;
-  margin-bottom: 25px;
-}
-
-/* CARDS */
-.cards {
-  width: 100%;
-  max-width: 900px;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-  margin-bottom: 30px;
-}
-
-.card {
-  background: white;
-  padding: 20px;
-  width: 200px;
-  border-radius: 14px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-  text-align: center;
-  transition: 0.3s;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-}
-
-.card h3 {
-  font-size: 30px;
-  color: #0f766e;
-}
-
-.card p {
-  color: #64748b;
-}
-
-/* CRUD */
-.crud-container {
-  width: 100%;
-  max-width: 900px;
-  background: white;
-  padding: 25px;
-  border-radius: 14px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-}
-
-.crud-container h2 {
-  margin-bottom: 15px;
-  color: #134e4a;
-  text-align: center;
-}
-
-/* FORM */
-.crud-form {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 15px;
-}
-
-#nombre, #rolUser {
-  flex: 1;
-  padding: 12px;
-  border-radius: 10px;
-  border: 1px solid #99f6e4;
-  outline: none;
-}
-
-#nombre:focus, #rolUser:focus {
-  border-color: #0f766e;
-}
-
-/* BOTÓN */
-#agregar {
-  background: linear-gradient(135deg, #0f766e, #14b8a6);
-  color: white;
-  border: none;
-  padding: 12px 18px;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-#agregar:hover {
-  transform: scale(1.05);
-}
-
-/* LISTA */
-#lista p {
-  background: #f0fdfa;
-  padding: 12px;
-  border-radius: 10px;
-  margin: 8px 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-#lista button {
-  background: #ef4444;
-  border: none;
-  color: white;
-  padding: 6px 12px;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
-#lista button:hover {
-  background: #dc2626;
 }
