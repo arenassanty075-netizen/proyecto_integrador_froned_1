@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Estadístico - EduSoft</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body class="page-dashboard">
+
+<div class="main-content">
+
+    <h1>📊 Dashboard Estadístico</h1>
+
+    <div class="cards">
+
+        <div class="card">
+          <h3 id="totalEstudiantes">0</h3>
+            <p>Estudiantes</p>
+        </div>
+
+        <div class="card">
+            <h3 id="totalProfesores">0</h3>
+            <p>Profesores</p>
+        </div>
+
+        <div class="card">
+             <h3 id="totalAdministradores">0</h3>
+            <p>Administradores</p>
+        </div>
+
+         <div class="card">
+        <h3 id="totalUsuarios">0</h3>
+        <p>Usuarios</p>
+    </div>
+
+    </div>
+
+    <div class="graficos-grid">
+
+    <div class="grafico-card">
+        <h2>👨‍🏫 Distribución de usuarios</h2>
+        <canvas id="grafico1"></canvas>
+    </div>
+
+
+</div>
+
+    <br>
+
+    <a href="dashboard.html" class="btn">
+        ⬅ Volver al Dashboard
+    </a>
+
+</div>
+
+<script src="graficos.js"></script>
+
+</body>
+</html>

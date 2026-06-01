@@ -101,7 +101,7 @@ if (lista) {
         usuarios.forEach((user, index) => {
             lista.innerHTML += `
                 <p>
-                    ${user.nombre} - ${user.email}
+                    ${user.nombre} - ${user.email} - ${user.rol}
                     <button onclick="editarUsuario(${index})">Editar</button>
                     <button onclick="eliminarUsuario(${index})">Eliminar</button>
                 </p>
@@ -123,7 +123,8 @@ if (lista) {
         usuarios[usuarioEditando] = {
             nombre: nombre.value,
             email: email.value,
-            password: password.value
+            password: password.value,
+            rol: usuarios[usuarioEditando].rol
         };
 
         usuarioEditando = null;
@@ -134,7 +135,8 @@ if (lista) {
         usuarios.push({
             nombre: nombre.value,
             email: email.value,
-            password: password.value
+            password: password.value,
+            rol: "Estudiante"
         });
     }
 
@@ -187,7 +189,8 @@ function registrar() {
     usuarios.push({
         nombre: nombre.value,
         email: email.value,
-        password: password.value
+        password: password.value,
+        rol: "Estudiante"
     });
 
     localStorage.setItem("usuarios", JSON.stringify(usuarios));
@@ -225,7 +228,10 @@ async function cargarUsuariosJson() {
         const respuesta = await fetch("usuarios.json");
         const usuariosJson = await respuesta.json();
 
-        if (!localStorage.getItem("usuarios")) {
+        const usuariosGuardados =
+            JSON.parse(localStorage.getItem("usuarios")) || [];
+
+        if (usuariosGuardados.length === 0) {
             localStorage.setItem(
                 "usuarios",
                 JSON.stringify(usuariosJson)
@@ -236,5 +242,4 @@ async function cargarUsuariosJson() {
         console.error("Error al cargar usuarios.json", error);
     }
 }
-
-cargarUsuariosJson();
+cargarUsuariosJson()
